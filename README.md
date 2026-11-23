@@ -1,65 +1,99 @@
 # 🪟 Windows Terminal & PowerShell Tokyo Night Setup
 
-ชุดติดตั้งสภาพแวดล้อม Windows Terminal + PowerShell สไตล์ Tokyo Night พร้อม Fastfetch, Oh My Posh, ไอคอน และสีสันในตาราง `dir` สำหรับนำไปติดตั้งในเครื่องอื่นได้ทันที
+[![OS - Windows](https://img.shields.io/badge/OS-Windows%2011%20%2F%2010-0078D6?logo=windows&logoColor=white)](#)
+[![Shell - PowerShell 7](https://img.shields.io/badge/Shell-PowerShell%207-5391FE?logo=powershell&logoColor=white)](#)
+[![Theme - Tokyo Night](https://img.shields.io/badge/Theme-Tokyo%20Night-7AA2F7?logo=visual-studio-code&logoColor=white)](#)
+[![Prompt - Oh My Posh](https://img.shields.io/badge/Prompt-Oh%20My%20Posh-E65C00?logo=powershell&logoColor=white)](https://ohmyposh.dev)
+[![Terminal - Windows Terminal](https://img.shields.io/badge/Terminal-Windows%20Terminal-4D4D4D?logo=windows-terminal&logoColor=white)](#)
+[![Maintenance - Active](https://img.shields.io/badge/Maintenance-Active-brightgreen)](#)
+
+ชุดติดตั้งสภาพแวดล้อม **Windows Terminal + PowerShell 7** สไตล์ **Tokyo Night Storm** แบบอัตโนมัติ (**1-Click Installer**) พร้อม Fastfetch, Oh My Posh, PSReadLine, Nerd Font, ไอคอน และสีสันในตาราง `dir` สำหรับนำไปติดตั้งในเครื่อง Windows เครื่องอื่นได้ทันทีในคลิกเดียว
 
 ---
 
-## 📦 สิ่งที่รวมอยู่ในชุดนี้
+## ✨ ไฮไลท์และฟีเจอร์เด่น (Features)
 
-1. **PowerShell Profile (`Microsoft.PowerShell_profile.ps1`)**:
-   - รองรับการแสดงผล Emoji (UTF-8)
-   - Oh My Posh Prompt สไตล์ WSL พร้อมระบบ Smart Cache (เปิดเร็ว <100ms)
-   - PSReadLine แนะนำคำสั่งอัตโนมัติ (Inline Prediction) สี Tokyo Night
-   - เมนูตัวเลือกเมื่อกด Tab (MenuComplete)
-   - คำสั่ง `cat` แสดงสีโค้ดด้วย `bat`
-   - ตาราง `dir` / `ls` แบบดั้งเดิมของ Windows 4 คอลัมน์ แต่มีสีที่สิทธิ์ `Mode` และมีไอคอนจาก `Terminal-Icons`
-2. **Oh My Posh Config (`tokyonight_storm.omp.json`)**:
-   - พาธโฟลเดอร์ `📂`
-   - Git Branch `(🌱 main)` พร้อมแสดงจำนวนไฟล์ที่แก้ไข
-   - ตัวจับเวลาคำสั่ง `⏱` (เมื่อทำงานเกิน 2 วินาที)
-   - สถานะ Admin `⚡Admin` (เมื่อเปิดแบบ Run as Administrator)
-3. **Fastfetch Config & Logo (`config.jsonc`, `logo2.txt`)**:
-   - กรอบการ์ดสไตล์ Badge Box สีขาวเรียบหรู
-   - แสดงสถานะระบบ: OS, Host, Kernel, Uptime, Memory, Local IP, Wi-Fi, ฯลฯ
-   - ใช้โลโก้ตัวละคร ASCII เฉพาะตัว
-4. **Colored Mode XML (`ColoredMode.format.ps1xml`)**:
-   - ตกแต่งสีให้คอลัมน์ `Mode` ในคำสั่ง `dir`: โฟลเดอร์สีฟ้า, ไฟล์สีเขียว, อ่านอย่างเดียวสีเหลือง, อื่นๆ สีเทา
-5. **Windows Terminal Scheme (`wt-tokyonight-scheme.json`)**:
-   - โค้ดสี Tokyo Night สำหรับ Windows Terminal
-6. **WSL Shortcut (`wsl ~`)**:
-   - รองรับการพิมพ์ `wsl ~` เพื่อเปิดเข้าสู่ Linux Home Directory (`/home/username`) ทันที ป้องกัน Error `command not found` ใน PowerShell 7
+- ⚡ **1-Click Auto Installer:** ติดตั้งทุกอย่างอัตโนมัติผ่าน `install.bat` หรือ `install.ps1` (โหลดแอป, โมดูล, คอนฟิก และฟอนต์เสร็จสรรพ)
+- 🎨 **Tokyo Night Storm Theme:** ธีมสีคุมโทนทั่วทั้ง Windows Terminal, Prompt, และ Syntax Highlighting
+- 🚀 **Smart Prompt Cache (<100ms):** ใช้ระบบแคชสำหรับ Oh My Posh ทำให้เปิด Terminal ขึ้นมาได้ทันที ไม่หน่วง
+- 💡 **PSReadLine Predictive IntelliSense:** แนะนำคำสั่งอัตโนมัติจาก History พร้อมแสดง Syntax Highlight สี Tokyo Night
+- 📁 **Enhanced Directory Listing:** แสดงผลคำสั่ง `dir` / `ls` แบบดั้งเดิม 4 คอลัมน์ แต่เพิ่มสีสิทธิ์ไฟล์ `Mode` และไอคอนโฟลเดอร์/ไฟล์สวยงาม
+- 🐧 **WSL Bridge Shortcut:** รองรับการพิมพ์ `wsl ~` เพื่อเปิดเข้าสู่ Linux Home Directory (`/home/username`) ได้ทันที ไม่ติดขัด Error
+- 🔄 **Safe Reset Support:** มีสคริปต์ `reset.bat` / `reset.ps1` สำหรับคืนค่าดั้งเดิมของ Windows ได้ 100%
 
 ---
 
-## ⚡ วิธีติดตั้งบนเครื่องใหม่ (ง่ายที่สุด)
+## 📦 เครื่องมือที่ติดตั้งในระบบ (Included Tools)
 
-### วิธีที่ 1: ดับเบิลคลิกไฟล์ `install.bat` (แนะนำ ⭐ ง่ายที่สุด)
-1. คัดลอกโฟลเดอร์ `terminal-setup` (หรือบีบอัดเป็น `.zip`) ไปวางที่เครื่องใหม่
-2. **ดับเบิลคลิกที่ไฟล์ `install.bat`** (ระบบจะขอสิทธิ์ Administrator ให้อัตโนมัติ)
-3. ระบบจะจัดการดาวน์โหลดแพ็กเกจ (PowerShell 7, Oh My Posh, Fastfetch, Bat, Font), ติดตั้งโมดูล, คัดลอกคอนฟิก และตั้งค่า Windows Terminal ให้เสร็จสรรพในคลิกเดียว
+| เครื่องมือ | คำสั่ง / สิ่งที่ได้รับ | คำอธิบายและความสามารถ |
+| :--- | :--- | :--- |
+| **PowerShell 7** | `pwsh` | PowerShell รุ่นใหม่ล่าสุด เร็วกว่า เสถียรกว่า และรองรับฟีเจอร์สมัยใหม่ |
+| **Oh My Posh** | `oh-my-posh` | Engine แสดงผล Terminal Prompt สไตล์ WSL พร้อมแสดง Git Branch, ตัวจับเวลา และสถานะ Admin |
+| **Fastfetch** | `fastfetch` | แสดงข้อมูลสเปกเครื่อง OS, Hardware, Memory และการ์ด Badge Box สีขาวเรียบหรู |
+| **Bat** | `bat`, `cat` | แสดงเนื้อหาไฟล์พร้อมหมายเลขบรรทัด และ Syntax Highlighting หลากภาษา |
+| **Terminal-Icons** | `dir`, `ls` | แสดงไอคอน Nerd Font ตามประเภทและนามสกุลไฟล์ |
+| **PSReadLine** | Prediction / Complete | แนะนำคำสั่งเก่าอัตโนมัติ (Inline Prediction) และกด Tab แสดงเมนูแบบตาราง |
+| **JetBrainsMono NF** | Font | Nerd Font คมชัดพร้อมสัญลักษณ์และไอคอนครบถ้วน |
 
 ---
 
-### วิธีที่ 2: รันผ่าน PowerShell (ทางเลือก)
-เปิด **PowerShell** (Run as Administrator) แล้วพิมพ์:
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-cd C:\Path\To\terminal-setup
-.\install.ps1
+## 📁 โครงสร้างโปรเจกต์ (Project Structure)
+
+```text
+my-terminal-customs/
+├── configs/
+│   ├── fastfetch/
+│   │   ├── config.jsonc                 # การตั้งค่าการแสดงผล Fastfetch แบบ Badge Box
+│   │   ├── logo.txt                     # โลโก้ตัวละคร ASCII
+│   │   └── logo2.txt
+│   ├── ColoredMode.format.ps1xml        # สีสันในตารางสิทธิ์ Mode ของคำสั่ง dir
+│   ├── Microsoft.PowerShell_profile.ps1 # Profile พร้อมชอร์ตคัต 'wsl ~' และระบบ Smart Cache
+│   ├── tokyonight_storm.omp.json        # ธีม Oh My Posh Tokyo Night Storm
+│   └── wt-tokyonight-scheme.json        # Color Scheme สำหรับ Windows Terminal
+├── install.bat                          # ดับเบิลคลิกเพื่อติดตั้งอัตโนมัติ (1-Click Run)
+├── install.ps1                          # สคริปต์หลักดาวน์โหลดและตั้งค่าระบบผ่าน PowerShell
+├── reset.bat                            # ดับเบิลคลิกเพื่อคืนค่าเริ่มต้นของ Windows
+├── reset.ps1                            # สคริปต์รีเซ็ตระบบ
+├── .gitignore                           # ละเว้นไฟล์ zip และไฟล์ระบบ
+└── README.md                            # คู่มือการติดตั้งและใช้งาน
 ```
+
+---
+
+## ⚡ วิธีติดตั้งบนเครื่องใหม่
+
+### วิธีที่ 1: ติดตั้งผ่าน Git Clone (แนะนำสำหรับ Developer ⭐)
+เปิด PowerShell แล้วรันคำสั่ง:
+```powershell
+git clone https://github.com/sarawutms/my-terminal-customs.git
+cd my-terminal-customs
+.\install.bat
+```
+
+### วิธีที่ 2: ใช้ไฟล์ ZIP พกพา
+1. ดาวน์โหลดหรือคัดลอกไฟล์ `terminal-setup.zip` ไปยังเครื่องใหม่
+2. แตกไฟล์ ZIP ออกมา
+3. **ดับเบิลคลิกที่ไฟล์ `install.bat`** (ระบบจะขอสิทธิ์ Administrator ให้อัตโนมัติ)
+4. รอระบบจัดการดาวน์โหลดเครื่องมือ, ติดตั้งโมดูล, คัดลอกคอนฟิก และตั้งค่า Windows Terminal ให้เสร็จสรรพ
+5. ปิดแล้วเปิด Windows Terminal ใหม่อีกครั้งเพื่อเริ่มใช้งาน
 
 ---
 
 ## 🔄 วิธีรีเซ็ตคืนค่าเดิม (Reset / Uninstall)
 
-หากต้องการคืนค่าเดิมของ Windows ทั้งหมด:
+หากต้องการคืนค่าเดิมของระบบ Windows ทั้งหมด:
 * ดับเบิลคลิก **`reset.bat`** (หรือรัน `.\reset.ps1` ใน PowerShell)
-* สคริปต์จะลบไฟล์ปรับแต่งทั้งหมดและคืนค่าเดิมของระบบให้อัตโนมัติ ปลอดภัย 100%
+* สคริปต์จะลบไฟล์ตั้งค่าทั้งหมดและคืนค่าเดิมของ Windows Terminal ให้อัตโนมัติ ปลอดภัย 100%
 
 ---
 
-## 🔤 การตรวจสอบหลังติดตั้งเสร็จ:
+## 🔗 โปรเจกต์ที่เกี่ยวข้อง (Related Projects)
 
-ระบบจะตั้งค่าฟอนต์ **JetBrainsMono NF** และสลับ Default Profile เป็น **PowerShell 7** ใน Windows Terminal ให้อัตโนมัติแล้ว
+* 🐧 **[sarawutms/my-linux-customs](https://github.com/sarawutms/my-linux-customs)**: ชุดติดตั้งสภาพแวดล้อมสำหรับ Linux / Debian / WSL (Bash, Starship, Fastfetch, Btop, Eza)
 
-> **หมายเหตุ:** ปิดแล้วเปิด Windows Terminal ใหม่อีกครั้งเพื่อโหลดการตั้งค่าทั้งหมด เพียงเท่านี้ก็จะได้ Terminal สไตล์ Tokyo Night ที่สวยงามและเร็วแรง 100% ทันที! 🎉
+---
+
+## 👤 Author
+
+- **GitHub:** [@sarawutms](https://github.com/sarawutms)
+- **Repository:** [my-terminal-customs](https://github.com/sarawutms/my-terminal-customs)
