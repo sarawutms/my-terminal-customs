@@ -1,4 +1,4 @@
-# 🚀 Windows Terminal & PowerShell Tokyo Night Setup
+# 🪟 Windows Terminal & PowerShell Tokyo Night Setup
 
 ชุดติดตั้งสภาพแวดล้อม Windows Terminal + PowerShell สไตล์ Tokyo Night พร้อม Fastfetch, Oh My Posh, ไอคอน และสีสันในตาราง `dir` สำหรับนำไปติดตั้งในเครื่องอื่นได้ทันที
 
