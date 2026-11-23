@@ -1,0 +1,9 @@
+# Archives & Backups
+*.zip
+*.bak
+*.tmp
+
+# Editor & OS files
+.vscode/
+Thumbs.db
+Desktop.ini
